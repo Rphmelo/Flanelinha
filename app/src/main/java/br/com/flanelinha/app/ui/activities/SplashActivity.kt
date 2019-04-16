@@ -1,12 +1,14 @@
 package br.com.flanelinha.app.ui.activities
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
 import br.com.flanelinha.app.R
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
@@ -36,7 +38,7 @@ class SplashActivity : AppCompatActivity() {
     private fun load() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.splash)
         animation.reset()
-//        ivLogo.startAnimation(animation)
+        ivLogo.startAnimation(animation)
 
         Handler().postDelayed({
             showMain()
@@ -44,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun showMain() {
-//        startActivity(Intent(this, LoginActivity::class.java))
-//        finish()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }
