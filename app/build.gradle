@@ -39,6 +39,9 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$android_versions"
     implementation "com.android.support:cardview-v7:$android_versions"
 
+    //Design
+    implementation "com.android.support:design:$android_versions"
+
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     kapt "android.arch.lifecycle:compiler:$lifecycle_version"

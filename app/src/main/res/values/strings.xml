@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Flanelinha</string>
+    <string name="label_button_login">Login</string>
+    <string name="text_field_password_hint">Password</string>
+    <string name="text_field_user_hint">User</string>
+    <string name="label_logout">Logout</string>
+    <string name="label_balance_amount_title">Saldo</string>
+    <string name="label_account">Conta</string>
+    <string name="currency_list_title">Recentes</string>
+    <string name="label_payment">Pagamento</string>
+    <string name="empty_input_message">Todos os campos devem ser preenchidos</string>
+    <string name="invalid_user_message">Usuário inválido! Digite um Email ou CPF válido!</string>
+    <string name="invalid_password_message">
+        A senha precisa ter no mínimo um caracter especial, um caracter alfanumérico e uma letra maiúscula
+    </string>
+    <string name="login_error_message">Não foi possível realizar o login, tente mais tarde!</string>
 </resources>
