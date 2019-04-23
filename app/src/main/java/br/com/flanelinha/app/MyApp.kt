@@ -3,7 +3,7 @@ package br.com.flanelinha.app
 import android.app.Activity
 import com.facebook.stetho.Stetho
 import android.app.Application
-import br.com.rphmelo.repofinder.di.components.DaggerAppComponent
+import br.com.flanelina.app.di.components.DaggerAppComponent
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject

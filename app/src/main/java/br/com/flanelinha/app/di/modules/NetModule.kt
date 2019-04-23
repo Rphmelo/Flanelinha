@@ -1,6 +1,5 @@
-package br.com.rphmelo.repofinder.di.modules
+package br.com.flanelina.app.di.modules
 
-import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

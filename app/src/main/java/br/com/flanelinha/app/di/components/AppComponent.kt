@@ -1,9 +1,9 @@
-package br.com.rphmelo.repofinder.di.components
+package br.com.flanelina.app.di.components
 
 import android.app.Application
 import br.com.flanelinha.app.MyApp
 import br.com.flanelinha.app.di.modules.ActivityModule
-import br.com.rphmelo.repofinder.di.modules.*
+import br.com.flanelina.app.di.modules.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

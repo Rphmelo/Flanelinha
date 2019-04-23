@@ -1,4 +1,4 @@
-package br.com.rphmelo.repofinder.di.modules
+package br.com.flanelina.app.di.modules
 
 import android.content.Context
 import dagger.Module

@@ -1,4 +1,4 @@
-package br.com.rphmelo.repofinder.di.modules
+package br.com.flanelina.app.di.modules
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import dagger.Module

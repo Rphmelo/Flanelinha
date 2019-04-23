@@ -1,4 +1,4 @@
-package br.com.flanelinha.app.ui.activities
+package br.com.flanelinha.app.common.ui.activities
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
 import br.com.flanelinha.app.R
+import br.com.flanelinha.app.login.ui.activities.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class SplashActivity : AppCompatActivity() {
             markAppAlreadyOpen()
             load()
         } else {
-            showMain()
+            showLogin()
         }
     }
 
@@ -41,11 +42,11 @@ class SplashActivity : AppCompatActivity() {
         ivLogo.startAnimation(animation)
 
         Handler().postDelayed({
-            showMain()
+            showLogin()
         }, 3200L)
     }
 
-    private fun showMain() {
+    private fun showLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }

@@ -1,4 +1,4 @@
-package br.com.rphmelo.repofinder.di.modules
+package br.com.flanelina.app.di.modules
 
 import dagger.Module
 import dagger.Provides
