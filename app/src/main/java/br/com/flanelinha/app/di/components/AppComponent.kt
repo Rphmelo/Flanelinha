@@ -4,6 +4,7 @@ import android.app.Application
 import br.com.flanelinha.app.MyApp
 import br.com.flanelinha.app.di.modules.ActivityModule
 import br.com.flanelina.app.di.modules.*
+import br.com.flanelinha.app.di.modules.FirebaseModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
     FragmentModule::class,
     ViewModelModule::class,
     RepositoryModule::class,
-    AppModule::class
+    AppModule::class,
+    FirebaseModule::class
 ])
 interface AppComponent {
 
