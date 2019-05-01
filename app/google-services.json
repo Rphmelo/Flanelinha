@@ -1,50 +1,35 @@
 {
   "project_info": {
-    "project_number": "671584397542",
-    "firebase_url": "https://flanelinha-223018.firebaseio.com",
-    "project_id": "flanelinha-223018",
-    "storage_bucket": "flanelinha-223018.appspot.com"
+    "project_number": "666844116406",
+    "firebase_url": "https://flanelinha-26987.firebaseio.com",
+    "project_id": "flanelinha-26987",
+    "storage_bucket": "flanelinha-26987.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:671584397542:android:e6da1c06cb48168c",
+        "mobilesdk_app_id": "1:666844116406:android:e6da1c06cb48168c",
         "android_client_info": {
           "package_name": "br.com.flanelinha.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "671584397542-u4q4vndqvnpm8cgpfr1ilsivveviqgt4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.com.flanelinha.app",
-            "certificate_hash": "4b77efdf4f037da4bf60b71abd7d9ebd28f25010"
-          }
-        },
-        {
-          "client_id": "671584397542-230t1t6jpnmp6ed3543eef7qvlese3su.apps.googleusercontent.com",
+          "client_id": "666844116406-t9qpeavpfklehdi3m3194q951ma68rkr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBndLINKFe2Rsk22TdLaFn6jHxGKUQ9-K0"
+          "current_key": "AIzaSyDzxMj578dxDz6qyZgbJDjoZnRjuWZHg3A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "671584397542-230t1t6jpnmp6ed3543eef7qvlese3su.apps.googleusercontent.com",
+              "client_id": "666844116406-t9qpeavpfklehdi3m3194q951ma68rkr.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "671584397542-areoau58hmmo7v9850l644teo9a72q8l.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.raulvbrito.FlanelinhaApp"
-              }
             }
           ]
         }

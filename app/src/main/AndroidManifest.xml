@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.flanelinha.app">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.ui.activities.LoginActivity" />
-        <activity android:name=".registration.ui.activities.ParkRegistrationActivity"></activity>
+        <activity android:name=".registration.ui.activities.LoginSignUpActivity"></activity>
     </application>
 
 </manifest>
