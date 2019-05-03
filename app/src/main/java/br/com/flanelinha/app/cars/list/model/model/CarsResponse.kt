@@ -2,7 +2,7 @@ package br.com.flanelinha.app.cars.list.model.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CarrosResponse(@SerializedName("content")val pokemons: List<Carros>)
+data class CarsResponse(@SerializedName("content")val pokemons: List<Carros>)
 
 data class Carros(
         @SerializedName("plate") val placa: String,
