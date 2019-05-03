@@ -7,7 +7,7 @@
 
     </style>
 
-    <style name="text_input_style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="text_input_style" >
         <item name="android:layout_width">@dimen/text_input_width</item>
         <item name="android:layout_marginRight">@dimen/small_margin</item>
         <item name="android:layout_marginLeft">@dimen/small_margin</item>

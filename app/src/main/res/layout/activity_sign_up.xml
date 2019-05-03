@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cadastro"
-    tools:context=".registration.ui.activities.LoginSignUpActivity">
+    tools:context=".registration.ui.activities.SignUpActivity">
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilName"
+        android:id="@+id/tilNameSignUp"
         style="@style/text_input_style"
         android:layout_height="@dimen/text_input_layout_height"
         android:layout_marginTop="170dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/tietName"
+            android:id="@+id/tietNameSignUp"
             android:layout_width="@dimen/text_input_width"
             android:layout_height="@dimen/text_input_edit_text_height"
             android:hint="@string/text_field_name_hint"
@@ -27,7 +27,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilUser"
+        android:id="@+id/tilUserSignUp"
         style="@style/text_input_style"
         android:layout_height="@dimen/text_input_layout_height"
         android:layout_marginStart="8dp"
@@ -37,10 +37,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilName">
+        app:layout_constraintTop_toBottomOf="@+id/tilNameSignUp">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/tietUser"
+            android:id="@+id/tietUserSignUp"
             android:layout_width="@dimen/text_input_width"
             android:layout_height="@dimen/text_input_edit_text_height"
             android:hint="@string/text_field_user_hint"
@@ -49,7 +49,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilPassword"
+        android:id="@+id/tilPasswordSignUp"
         style="@style/text_input_style"
         android:layout_height="@dimen/text_input_layout_height"
         android:layout_marginStart="8dp"
@@ -59,10 +59,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilUser">
+        app:layout_constraintTop_toBottomOf="@+id/tilUserSignUp">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/tietPassword"
+            android:id="@+id/tietPasswordSignUp"
             android:layout_width="@dimen/text_input_width"
             android:layout_height="@dimen/text_input_edit_text_height"
             android:hint="@string/text_field_password_hint"
@@ -77,7 +77,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tilPasswordSignUp"
         style="@style/progress_style" />
 
     <Button
@@ -91,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tilPasswordSignUp" />
 
 
 

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
+import br.com.flanelinha.app.R
 import br.com.flanelinha.app.common.constants.USER_PREFERENCES_KEY
 import br.com.flanelinha.app.login.ui.activities.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*

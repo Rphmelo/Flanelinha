@@ -22,7 +22,7 @@ class ListaCarrosActivity : AppCompatActivity() {
 
     private fun exibeNaLista(cars: List<Carros>){
         rvCarros.adapter = ListaCarrosAdapter(this, cars, {
-            Toast.makeText(this, it.nome, Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, it.nome, Toast.LENGTH_LONG).show()
         })
         rvCarros.layoutManager = LinearLayoutManager(this)
     }
@@ -60,5 +60,4 @@ class ListaCarrosActivity : AppCompatActivity() {
         super.onDestroy()
         disposable?.dispose()
     }
-} {
 }

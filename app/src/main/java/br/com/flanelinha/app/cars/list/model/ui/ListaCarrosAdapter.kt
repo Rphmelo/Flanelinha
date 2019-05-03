@@ -28,21 +28,21 @@ class ListaCarrosAdapter(
     }
 
     override fun onBindViewHolder(holder: CarrosViewHolder, position: Int) {
-        holder.bindView(pokemons[position], listener)
+//        holder.bindView(pokemons[position], listener)
     }
 
     class CarrosViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
-
-        fun bindView(cars: Carros,
-                     listener: (Carros) -> Unit) = with(itemView) {
-            tvModelo.text = cars.nome
-            getPicassoAuth(itemView.context)
-                    .load("https://pokedexdx.herokuapp.com${cars.imagem}")
-                    .into(ivCarros)
-
-            setOnClickListener {listener(cars)}
-        }
+//
+//        fun bindView(cars: Carros,
+//                     listener: (Carros) -> Unit) = with(itemView) {
+//            tvModelo.text = cars.nome
+//            getPicassoAuth(itemView.context)
+//                    .load("https://pokedexdx.herokuapp.com${cars.imagem}")
+//                    .into(ivCarros)
+//
+//            setOnClickListener {listener(cars)}
+//        }
 
     }
 }
