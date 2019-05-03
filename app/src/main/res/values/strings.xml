@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Flanelinha</string>
     <string name="label_button_login">Login</string>
-    <string name="text_field_password_hint">Password</string>
-    <string name="text_field_user_hint">User</string>
+    <string name="label_button_register">Registrar</string>
+    <string name="text_field_password_hint">Senha</string>
+    <string name="text_field_user_hint">E-mail</string>
+    <string name="text_field_name_hint">Nome</string>
+    <string name="text_field_model_hint">Modelo</string>
+    <string name="text_field_plate_hint">Placa</string>
     <string name="label_logout">Logout</string>
     <string name="label_balance_amount_title">Saldo</string>
     <string name="label_account">Conta</string>
