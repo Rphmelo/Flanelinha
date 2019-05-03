@@ -8,14 +8,13 @@ import android.view.ViewGroup
 import br.com.flanelinha.app.R
 //import br.com.flanelinha.recyclerview.R
 import br.com.flanelinha.app.cars.list.model.model.Carros
-import kotlinx.android.synthetic.main.carros_row.view.*
 
-class ListaCarrosAdapter(
+class CarsListAdapter(
         private val context: Context,
         private val pokemons: List<Carros>,
         private val listener: (Carros) -> Unit
 ) :
-        RecyclerView.Adapter<ListaCarrosAdapter.CarrosViewHolder>() {
+        RecyclerView.Adapter<CarsListAdapter.CarrosViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarrosViewHolder {
         val view = LayoutInflater.from(context)
