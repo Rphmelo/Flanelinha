@@ -15,7 +15,7 @@ interface CarDAO {
     fun save(car: Car)
 
     @Query("SELECT * FROM car")
-    fun loadCars(): List<Car>
+    fun loadCars(): LiveData<List<Car>>
 
     @Update
     fun update(car: Car)

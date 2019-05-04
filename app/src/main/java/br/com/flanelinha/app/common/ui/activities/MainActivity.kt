@@ -8,6 +8,7 @@ import br.com.flanelinha.app.R
 import br.com.flanelinha.app.about.AboutFragment
 import br.com.flanelinha.app.cars.ui.fragments.CarListFragment
 import br.com.flanelinha.app.cars.ui.fragments.RegisterCarFragment
+import br.com.flanelinha.app.contact.ui.ContactFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_register -> {
                 openFragment(RegisterCarFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_contact -> {
+                openFragment(ContactFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
