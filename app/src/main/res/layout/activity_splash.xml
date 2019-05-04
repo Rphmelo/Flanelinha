@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/splash_background"
     tools:context=".common.ui.activities.SplashActivity">
 
     <ImageView
@@ -11,7 +12,8 @@
         android:layout_width="224dp"
         android:layout_height="245dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/logo_flanelinha"
+        android:background="#85ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

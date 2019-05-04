@@ -19,7 +19,7 @@ class SignUpActivity : AppCompatActivity() {
 
         loginViewModel = LoginViewModel(this)
 
-        btnRegister.setOnClickListener(View.OnClickListener {
+        btnRegister.setOnClickListener({
             createUserWithEmailAndPassword()
         })
 
