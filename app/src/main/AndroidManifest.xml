@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.flanelinha.app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -22,14 +21,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.ui.activities.LoginActivity" />
-        <activity android:name=".registration.ui.activities.SignUpActivity"></activity>
+        <activity android:name=".registration.ui.activities.SignUpActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
+        <activity
+            android:name=".common.ui.activities.MainActivity"
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>

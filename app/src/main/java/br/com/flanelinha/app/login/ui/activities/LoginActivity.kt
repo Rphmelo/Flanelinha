@@ -7,6 +7,7 @@ import android.text.SpannableString
 import android.view.View
 import br.com.flanelinha.app.R
 import br.com.flanelinha.app.common.ui.activities.BaseActivity
+import br.com.flanelinha.app.common.ui.activities.MainActivity
 import br.com.flanelinha.app.common.util.ErrorMessage
 import br.com.flanelinha.app.login.data.model.UserAuthModel
 import br.com.flanelinha.app.login.ui.viewmodel.LoginViewModel
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun authenticate(){
         if(loginViewModel.isLoggedUser()){
-            showParkRegistrationScreen()
+            showMainScreen()
         } else{
             btnLogin.setOnClickListener({
                 signInWithEmailAndPassword()
@@ -46,13 +47,13 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.signInWithEmailAndPassword(
                 UserAuthModel(tietPassword.text.toString(), tietUser.text.toString()),
                 {
-                    showParkRegistrationScreen()
+                    showMainScreen()
                 }
         )
     }
 
-    private fun showParkRegistrationScreen() {
-        startActivity(Intent(this, SignUpActivity::class.java))
+    private fun showMainScreen() {
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 
