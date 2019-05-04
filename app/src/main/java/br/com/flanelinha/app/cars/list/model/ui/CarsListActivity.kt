@@ -22,7 +22,7 @@ class CarsListActivity : AppCompatActivity() {
 
     private fun exibeNaLista(cars: List<Cars>){
         rvCarros.adapter = CarsListAdapter(this, cars, {
-           Toast.makeText(this, it.nome, Toast.LENGTH_LONG).show()
+//           Toast.makeText(this, it.name, Toast.LENGTH_LONG).show()
         })
         rvCarros.layoutManager = LinearLayoutManager(this)
     }
