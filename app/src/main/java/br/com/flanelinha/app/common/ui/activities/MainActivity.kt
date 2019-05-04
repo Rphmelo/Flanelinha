@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import br.com.flanelinha.app.R
 import br.com.flanelinha.app.about.AboutFragment
-import br.com.flanelinha.app.cars.list.model.ui.CarListFragment
-import br.com.flanelinha.app.cars.list.model.ui.RegisterCarFragment
+import br.com.flanelinha.app.cars.ui.fragments.CarListFragment
+import br.com.flanelinha.app.cars.ui.fragments.RegisterCarFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

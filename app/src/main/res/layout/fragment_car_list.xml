@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.flanelinha.app.cars.list.model.ui.CarListFragment">
+    tools:context=".cars.ui.fragments.CarListFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,8 +11,8 @@
         android:background="@drawable/cadastro">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvCarros"
-            tools:listitem="@layout/carros_row"
+            android:id="@+id/rvCars"
+            tools:listitem="@layout/cars_row"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
