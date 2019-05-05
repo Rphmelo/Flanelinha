@@ -81,7 +81,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
 
     //GoogleMAps
-    implementation 'com.google.android.gms:play-services-maps:15.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.google.android.gms:play-services-places:15.0.0'
 
     // Room
