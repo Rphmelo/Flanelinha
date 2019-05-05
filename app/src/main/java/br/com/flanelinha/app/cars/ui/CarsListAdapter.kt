@@ -27,4 +27,5 @@ class CarsListAdapter(
         holder.bindView(cars[position])
     }
 
+
 }

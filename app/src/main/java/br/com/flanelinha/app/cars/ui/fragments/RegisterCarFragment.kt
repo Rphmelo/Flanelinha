@@ -24,6 +24,8 @@ class RegisterCarFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         carViewModel = CarViewModel(context!!)
 
+//        carViewModel.loadCarById(id)
+
         btnRegisterCars.setOnClickListener({
             carViewModel.saveCar(Car(0, tietPlate.text.toString(), tietModel.text.toString()))
         })

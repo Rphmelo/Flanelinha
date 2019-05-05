@@ -39,6 +39,10 @@ class CarViewModel(val context: Context): ViewModel() {
         }
     }
 
+    fun loadCarById(id: Int): Car {
+        return carDao.loadCarById(id)
+    }
+
     private fun setLoading(value: Boolean){
 //        isLoading = value
     }

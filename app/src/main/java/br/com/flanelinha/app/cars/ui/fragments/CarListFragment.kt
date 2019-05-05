@@ -5,6 +5,7 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.CarsListAdapter
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
 import kotlinx.android.synthetic.main.fragment_car_list.*
+import android.widget.AdapterView.OnItemClickListener
+
 
 class CarListFragment : Fragment() {
 
@@ -41,5 +44,6 @@ class CarListFragment : Fragment() {
             rvCars.adapter = CarsListAdapter(activity!!, it!!)
         })
     }
+
 
 }
