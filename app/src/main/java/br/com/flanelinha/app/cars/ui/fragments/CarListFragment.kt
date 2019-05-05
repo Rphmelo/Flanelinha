@@ -1,11 +1,9 @@
 package br.com.flanelinha.app.cars.ui.fragments
 
-import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,12 +13,12 @@ import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.CarsListAdapter
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
 import kotlinx.android.synthetic.main.fragment_car_list.*
-import android.widget.AdapterView.OnItemClickListener
 
 
 class CarListFragment : Fragment() {
 
     private lateinit var carViewModel: CarViewModel
+    private lateinit var cars: List<Car>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,8 +39,34 @@ class CarListFragment : Fragment() {
     private fun setupRecyclerView(){
         rvCars.layoutManager = LinearLayoutManager(context!!)
         carViewModel.cars.observe(this, Observer<List<Car>> {
-            rvCars.adapter = CarsListAdapter(activity!!, it!!)
+            cars = it!!
+            rvCars.adapter = CarsListAdapter(activity!!, cars, onItemListClick = {
+               adapterPosition ->  onItemListClick(adapterPosition)
+            })
         })
+    }
+
+    private fun openFragment(fragment: Fragment){
+        val transaction = fragmentManager!!.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    private fun onItemListClick(adapterPosition: Int){
+        val car = cars[adapterPosition]
+
+        val args = Bundle()
+        val updateFragment = RegisterCarFragment();
+
+        args.putLong("id", car.id)
+        args.putString("model", car.model)
+        args.putString("plate", car.plate)
+        args.putBoolean("isUpdate", true)
+
+        updateFragment.setArguments(args)
+
+        openFragment(updateFragment)
     }
 
 

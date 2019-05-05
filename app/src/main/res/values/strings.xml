@@ -21,6 +21,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_about">Sobre o Aplicativo</string>
     <string name="title_register">Cadastro</string>
+    <string name="title_update">Atualizar</string>
     <string name="title_list">Lista</string>
     <string name="title_map">Mapa</string>
     <string name="title_contact">Contato</string>
