@@ -69,21 +69,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        //PlaceAutoComplete
-        val autocompleteFragment = getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment
-        autocompleteFragment.setOnPlaceSelectedListener(object: PlaceSelectionListener {
-            override fun onError(p0: Status?) {
 
-            }
-
-            override fun onPlaceSelected(place: Place) {
-                mMap.clear()
-                mMap.addMarker(MarkerOptions().position(place.getLatLng()).title(place.getName().toString()))
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(place.getLatLng()))
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 12.0f))
-            }
-            //override fun onError(status:Status) {  }
-        })
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -131,7 +117,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .title("Fiap - Campus Paulista")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.homeaddress)))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(fiapPaulista, 15f))
-        //adicionarFormaCircular(fiapPaulista)
+        adicionarFormaCircular(fiapPaulista)
     }
 
     private fun adicionarFormaCircular(latLng: LatLng) {
