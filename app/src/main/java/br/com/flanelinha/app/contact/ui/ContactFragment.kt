@@ -28,7 +28,7 @@ class ContactFragment : Fragment() {
     fun makeCall(){
         btnMakeCall.setOnClickListener({
             val uri: String = "tel:" + tietPhoneNumber.text.toString().trim();
-            val intent = Intent(Intent.ACTION_CALL);
+            val intent = Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(uri));
             startActivity(intent);
         })
