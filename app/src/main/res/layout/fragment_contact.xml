@@ -5,9 +5,7 @@
     tools:context=".cars.ui.fragments.RegisterCarFragment">
 
     <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/cadastro">
@@ -25,7 +23,7 @@
                 android:id="@+id/tietPhoneNumber"
                 android:layout_width="@dimen/text_input_width"
                 android:layout_height="@dimen/text_input_edit_text_height"
-                android:hint="Digite o número do telefone"
+                android:hint="@string/text_field_phone_number_hint"
                 android:inputType="phone"
                 android:textColorLink="@color/colorAccent" />
 
@@ -36,7 +34,7 @@
             android:layout_width="202dp"
             android:layout_height="62dp"
             android:layout_marginTop="50dp"
-            android:text="Ligar"
+            android:text="@string/label_MakeCall"
             android:textColor="@android:color/white"
             android:background="@color/colorButton"
             app:layout_constraintEnd_toEndOf="parent"
