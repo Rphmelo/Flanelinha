@@ -31,10 +31,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
-    private lateinit var locationManager: LocationManager
-    private lateinit var locationListener: LocationListener
+   private lateinit var locationManager: LocationManager
+   private lateinit var locationListener: LocationListener
 
-    fun initLocationListener () {
+/*    fun initLocationListener () {
         locationListener = object : LocationListener {
             override fun onLocationChanged(location: Location?) {
                 val minhaLocalizacao = LatLng (location?.latitude!!, location.longitude)
@@ -55,15 +55,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
+*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-        PermissionUtils.validarPermissoes(
-                listOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                this, 1
-        )
+        PermissionUtils.validarPermissoes(listOf(Manifest.permission.ACCESS_FINE_LOCATION),this, 1)
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -72,7 +71,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+   override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         for (permissao in grantResults) {
             if (permissao == PackageManager.PERMISSION_DENIED) {
@@ -97,10 +96,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+/*        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         initLocationListener()
         requestLocationUpdates()
 
@@ -108,7 +110,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             mMap.addMarker(MarkerOptions().position(it))
         }
 
-
+*/
 
         // Add a marker in FIAP Paulista and move the camera and icon
         val fiapPaulista = LatLng(-23.5565804, -46.662113)
