@@ -34,6 +34,12 @@ class CarViewModel(val context: Context): ViewModel() {
         }
     }
 
+    fun deleteCar(car: Car){
+        executor.execute {
+            carDao.delete(car)
+        }
+    }
+
     private fun setLoading(value: Boolean){
 //        isLoading = value
     }

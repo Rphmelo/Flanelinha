@@ -1,5 +1,6 @@
 package br.com.flanelinha.app.cars.ui.fragments
 
+import android.app.AlertDialog
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,7 +14,7 @@ import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.CarsListAdapter
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
 import kotlinx.android.synthetic.main.fragment_car_list.*
-
+import android.content.DialogInterface
 
 class CarListFragment : Fragment() {
 
@@ -40,9 +41,16 @@ class CarListFragment : Fragment() {
         rvCars.layoutManager = LinearLayoutManager(context!!)
         carViewModel.cars.observe(this, Observer<List<Car>> {
             cars = it!!
-            rvCars.adapter = CarsListAdapter(activity!!, cars, onItemListClick = {
-               adapterPosition ->  onItemListClick(adapterPosition)
-            })
+            rvCars.adapter = CarsListAdapter(
+                    activity!!,
+                    cars,
+                    onItemListClick = {
+                        adapterPosition ->  updateItemList(adapterPosition)
+                    },
+                    onItemListLongClick = {
+                        adapterPosition ->  deleteItemList(adapterPosition)
+                    }
+            )
         })
     }
 
@@ -53,7 +61,7 @@ class CarListFragment : Fragment() {
         transaction.commit()
     }
 
-    private fun onItemListClick(adapterPosition: Int){
+    private fun updateItemList(adapterPosition: Int){
         val car = cars[adapterPosition]
 
         val args = Bundle()
@@ -69,5 +77,31 @@ class CarListFragment : Fragment() {
         openFragment(updateFragment)
     }
 
+    private fun deleteItemList(adapterPosition: Int){
+        val car = cars[adapterPosition]
+
+        showDeleteDialog(car)
+    }
+
+    private fun showDeleteDialog(car: Car){
+        val alertDialog = AlertDialog.Builder(activity).create()
+        alertDialog.setTitle("Tem Certeza que deseja deletar este item?")
+        alertDialog.setCancelable(true)
+
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancel", object : DialogInterface.OnClickListener {
+            override fun onClick(dialog: DialogInterface, which: Int) {
+                alertDialog.dismiss()
+            }
+        })
+
+        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Delete", object : DialogInterface.OnClickListener {
+            override fun onClick(dialog: DialogInterface, which: Int) {
+                carViewModel.deleteCar(car)
+                alertDialog.dismiss()
+            }
+        })
+        alertDialog.show()
+    }
 
 }
+
