@@ -50,8 +50,8 @@ class RegisterCarFragment : Fragment() {
         if(isUpdate){
             carToUpdate = Car(
                     arguments!!.getLong("id"),
-                    arguments!!.getString("model"),
-                    arguments!!.getString("plate")
+                    arguments!!.getString("plate"),
+                    arguments!!.getString("model")
             )
 
             tietModel.setText(carToUpdate.model)

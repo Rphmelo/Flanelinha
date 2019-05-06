@@ -88,13 +88,13 @@ class CarListFragment : Fragment() {
         alertDialog.setTitle("Tem Certeza que deseja deletar este item?")
         alertDialog.setCancelable(true)
 
-        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancel", object : DialogInterface.OnClickListener {
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancelar", object : DialogInterface.OnClickListener {
             override fun onClick(dialog: DialogInterface, which: Int) {
                 alertDialog.dismiss()
             }
         })
 
-        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Delete", object : DialogInterface.OnClickListener {
+        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Deletar", object : DialogInterface.OnClickListener {
             override fun onClick(dialog: DialogInterface, which: Int) {
                 carViewModel.deleteCar(car)
                 alertDialog.dismiss()
