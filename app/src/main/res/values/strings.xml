@@ -37,5 +37,6 @@
     <string name="title_list">Lista</string>
     <string name="title_map">Mapa</string>
     <string name="title_contact">Contato</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

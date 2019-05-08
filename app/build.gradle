@@ -38,6 +38,8 @@ dependencies {
 
     implementation "com.android.support:support-vector-drawable:$android_versions"
     implementation "com.android.support:support-v4:$android_versions"
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.13-beta-2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -62,6 +64,7 @@ dependencies {
     //GoogleMAps
     implementation "com.google.android.gms:play-services-maps:$maps_version"
     implementation "com.google.android.gms:play-services-places:$maps_version"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 
     //Firebase
     implementation 'com.google.firebase:firebase-core:16.0.8'

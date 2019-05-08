@@ -21,8 +21,8 @@ object PermissionUtils {
 
             if (listaPermissoes.isEmpty()) return true
             else {
-//                val novasPermissoes = arrayOfNulls<String>(listaPermissoes.size)
-//                ActivityCompat.requestPermissions(activity, listaPermissoes.toTypedArray(), requestCode)
+                val novasPermissoes = arrayOfNulls<String>(listaPermissoes.size)
+                ActivityCompat.requestPermissions(activity, listaPermissoes.toTypedArray(), requestCode)
             }
         }
 
