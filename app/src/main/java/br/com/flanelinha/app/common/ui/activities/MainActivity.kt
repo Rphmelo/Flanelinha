@@ -9,12 +9,17 @@ import br.com.flanelinha.app.about.AboutFragment
 import br.com.flanelinha.app.cars.ui.fragments.CarListFragment
 import br.com.flanelinha.app.cars.ui.fragments.RegisterCarFragment
 import br.com.flanelinha.app.contact.ui.ContactFragment
+import br.com.flanelinha.app.map.MapsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
+            R.id.navigation_map -> {
+                openFragment(MapsFragment())
+                return@OnNavigationItemSelectedListener true
+            }
             R.id.navigation_about -> {
                 openFragment(AboutFragment())
                 return@OnNavigationItemSelectedListener true
