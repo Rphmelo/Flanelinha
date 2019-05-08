@@ -1,10 +1,13 @@
 package br.com.flanelinha.app.map
 
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import br.com.flanelinha.app.R
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -15,6 +18,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import java.io.IOException
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         GoogleMap.OnMarkerClickListener {
@@ -72,6 +76,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun placeMarkerOnMap(location: LatLng) {
         val markerOptions = MarkerOptions().position(location)
+
+        val titleStr = getAddress(location)
+        markerOptions.title(titleStr)
+
         map.addMarker(markerOptions)
+    }
+
+    private fun getAddress(latLng: LatLng): String {
+        val geocoder = Geocoder(this)
+        val addresses: List<Address>?
+        val address: Address?
+        var addressText = ""
+
+        try {
+            // 2
+            addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
+            // 3
+            if (null != addresses && !addresses.isEmpty()) {
+                address = addresses[0]
+                address.getAddressLine(0)
+                addressText = address.getAddressLine(0)
+            }
+        } catch (e: IOException) {
+            Log.e("MapsActivity", e.localizedMessage)
+        }
+
+        return addressText
     }
 }
