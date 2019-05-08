@@ -12,7 +12,7 @@
         android:layout_width="224dp"
         android:layout_height="245dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logo_flanelinha"
+        android:src="@drawable/logo"
         android:background="#85ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
