@@ -25,6 +25,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_maps.*
 import java.io.IOException
 
 class MapsFragment : Fragment(), OnMapReadyCallback,
@@ -37,6 +38,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
     private lateinit var locationCallback: LocationCallback
     private lateinit var locationRequest: LocationRequest
     private var locationUpdateState = false
+    var addressText = ""
 
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
@@ -45,8 +47,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
         val rootView = inflater.inflate(R.layout.fragment_maps, container, false)
+
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.fragment_map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -67,6 +69,15 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         }
 
         createLocationRequest()
+    }
+
+    private fun shareAddressText() {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, addressText)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(sendIntent, "Enviar endereço via"))
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -90,6 +101,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         val paulista = LatLng(-23.5641438, -46.6524136)
         placeMarkerOnMap(paulista)
 
+        share_address.setOnClickListener {
+            shareAddressText()
+        }
         map.isMyLocationEnabled = true
 
         fusedLocationClient.lastLocation.addOnSuccessListener() { location ->
@@ -115,7 +129,6 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         val geocoder = Geocoder(activity)
         val addresses: List<Address>?
         val address: Address?
-        var addressText = ""
 
         try {
             addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
