@@ -13,6 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|top"
         android:tooltipText="Compartilhar endereço"
-        android:src="@drawable/ic_contact_24"
+        android:src="@drawable/ic_share_96"
         android:layout_margin="16dp" />
 </FrameLayout>
