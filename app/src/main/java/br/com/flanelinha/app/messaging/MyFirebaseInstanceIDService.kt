@@ -1,18 +1,16 @@
 package br.com.flanelinha.app
 
 import android.util.Log
-import com.google.firebase.iid.FirebaseInstanceIdService
 import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.iid.FirebaseInstanceIdService
 
-const val TAG = "MyFirebase"
+const val TAG = "Flanelinha Notification"
 
 class MyFirebaseInstanceIDService : FirebaseInstanceIdService(){
 
     override fun onTokenRefresh() {
         val refreshedToken = FirebaseInstanceId.getInstance().token
-        Log.d(TAG, "Refreshed token: " + refreshedToken!!)
-
-        //Send this token to server for later use
+        Log.d(TAG, "Token: " + refreshedToken!!)
     }
 
 }
