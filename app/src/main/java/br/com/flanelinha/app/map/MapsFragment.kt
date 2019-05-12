@@ -38,6 +38,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
     private lateinit var locationCallback: LocationCallback
     private lateinit var locationRequest: LocationRequest
     private var locationUpdateState = false
+    private var mapAlreadyLoaded = false
     var addressText = ""
 
     companion object {
@@ -49,9 +50,11 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_maps, container, false)
 
-        val mapFragment = childFragmentManager
-                .findFragmentById(R.id.fragment_map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        if(!mapAlreadyLoaded){
+            val mapFragment = childFragmentManager
+                    .findFragmentById(R.id.fragment_map) as SupportMapFragment
+            mapFragment.getMapAsync(this)
+        }
 
         return rootView
     }
@@ -99,18 +102,19 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
             return
         }
         val paulista = LatLng(-23.5641438, -46.6524136)
-        placeMarkerOnMap(paulista)
+        if(!mapAlreadyLoaded){
+            placeMarkerOnMap(paulista)
+        }
 
         share_address.setOnClickListener {
             shareAddressText()
         }
         map.isMyLocationEnabled = true
+        mapAlreadyLoaded = true
 
         fusedLocationClient.lastLocation.addOnSuccessListener() { location ->
             if (location != null) {
                 lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLng)
             }
         }
     }
