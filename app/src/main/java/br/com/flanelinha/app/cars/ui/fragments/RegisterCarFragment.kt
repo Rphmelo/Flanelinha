@@ -2,12 +2,9 @@ package br.com.flanelinha.app.cars.ui.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-
 import br.com.flanelinha.app.R
 import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
@@ -58,6 +55,11 @@ class RegisterCarFragment : Fragment() {
             tietPlate.setText(carToUpdate.plate)
             btnRegisterCars.setText(R.string.title_update)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        carViewModel.dispose()
     }
 
 }

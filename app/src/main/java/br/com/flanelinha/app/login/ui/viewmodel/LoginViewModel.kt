@@ -2,9 +2,8 @@ package br.com.flanelinha.app.login.ui.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.content.Context
-import android.widget.Toast
 import br.com.flanelinha.app.common.repository.FirebaseRepository
-import br.com.flanelinha.app.common.util.ErrorMessage
+import br.com.flanelinha.app.common.util.ErrorHandler
 
 import br.com.flanelinha.app.login.data.model.UserAuthModel
 import br.com.flanelinha.app.login.data.model.UserModel
@@ -51,6 +50,6 @@ class LoginViewModel(val context: Context) : ViewModel() {
     }
 
     private fun showErrorMessage(message: String) {
-        ErrorMessage().showErrorMessage(context, message)
+        ErrorHandler().showErrorMessage(context, message)
     }
 }

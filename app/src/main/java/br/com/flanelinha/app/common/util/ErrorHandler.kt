@@ -3,7 +3,7 @@ package br.com.flanelinha.app.common.util
 import android.content.Context
 import android.widget.Toast
 
-class ErrorMessage {
+class ErrorHandler {
 
     fun showErrorMessage(context: Context, message: String) {
         Toast.makeText(context,

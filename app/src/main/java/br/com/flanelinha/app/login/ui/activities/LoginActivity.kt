@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.SpannableString
 import android.view.View
 import br.com.flanelinha.app.R
-import br.com.flanelinha.app.common.ui.activities.BaseActivity
 import br.com.flanelinha.app.common.ui.activities.MainActivity
-import br.com.flanelinha.app.common.util.ErrorMessage
 import br.com.flanelinha.app.login.data.model.UserAuthModel
 import br.com.flanelinha.app.login.ui.viewmodel.LoginViewModel
 import br.com.flanelinha.app.registration.ui.activities.SignUpActivity
