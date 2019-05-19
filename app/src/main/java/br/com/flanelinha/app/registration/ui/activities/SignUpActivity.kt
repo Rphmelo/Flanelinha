@@ -1,8 +1,7 @@
 package br.com.flanelinha.app.registration.ui.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.support.v7.app.AppCompatActivity
 import br.com.flanelinha.app.R
 import br.com.flanelinha.app.login.data.model.UserAuthModel
 import br.com.flanelinha.app.login.data.model.UserModel

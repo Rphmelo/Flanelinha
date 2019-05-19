@@ -42,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun signInWithEmailAndPassword(){
+
         loginViewModel.signInWithEmailAndPassword(
                 UserAuthModel(tietPassword.text.toString(), tietUser.text.toString()),
                 {
