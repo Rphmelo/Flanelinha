@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity
 import br.com.flanelinha.app.R
 import br.com.flanelinha.app.about.AboutFragment
 import br.com.flanelinha.app.cars.ui.fragments.CarListFragment
-import br.com.flanelinha.app.cars.ui.fragments.RegisterCarFragment
 import br.com.flanelinha.app.contact.ui.ContactFragment
 import br.com.flanelinha.app.map.MapsFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,7 +18,6 @@ class MainActivity : AppCompatActivity() {
             MapsFragment(),
             AboutFragment(),
             CarListFragment(),
-            RegisterCarFragment(),
             ContactFragment()
     )
 
@@ -48,10 +46,6 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.navigation_car_list -> {
                 replaceFragment(fragments[2])
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_register -> {
-                replaceFragment(fragments[3])
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_contact -> {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/view_billet_list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:lineSpacingExtra="10sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginRight="56dp"
+            android:text="Você ainda não possui veículos"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textColor="#222222"
+            android:lineSpacingExtra="8sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Os veículos cadastrados para você serão listados aqui automaticamente."
+            />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

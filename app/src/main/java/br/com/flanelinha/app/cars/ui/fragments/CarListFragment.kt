@@ -29,6 +29,11 @@ class CarListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         carViewModel = CarViewModel(activity!!)
+        insert_car_button.setOnClickListener({
+            ErrorHandler.showInsertUpdateDialog(context!!,null,"Cadastrar", action = {
+                car -> carViewModel.insertCar(car)
+            })
+        })
         loadCars()
         setupRecyclerView()
     }
@@ -45,15 +50,23 @@ class CarListFragment : Fragment() {
             carListAdapter = CarsListAdapter(
                     activity!!,
                     cars,
-                    onItemListClick = {
-                        adapterPosition ->  updateItemList(adapterPosition)
-                    },
-                    onItemListLongClick = {
+                    onDeleteListener = {
                         adapterPosition ->  deleteItemList(adapterPosition)
+                    },
+                    onUpdateListener = {
+                        adapterPosition ->  updateItemList(adapterPosition)
                     }
             )
             rvCars.adapter = carListAdapter
-            rvCars.adapter?.notifyDataSetChanged()
+
+            if(it!!.isEmpty()){
+                container_no_items.visibility = View.VISIBLE
+                rvCars.visibility = View.GONE
+            } else {
+                container_no_items.visibility = View.GONE
+                rvCars.visibility = View.VISIBLE
+                rvCars.adapter?.notifyDataSetChanged()
+            }
         })
     }
 
@@ -67,26 +80,15 @@ class CarListFragment : Fragment() {
     private fun updateItemList(adapterPosition: Int){
         val car = cars?.get(adapterPosition)
 
-        val args = Bundle()
-        val updateFragment = RegisterCarFragment();
-
-        car?.let {
-            args.putLong("id", it.id)
-            args.putString("model", it.model)
-            args.putString("plate", it.plate)
-        }
-
-        args.putBoolean("isUpdate", true)
-
-        updateFragment.setArguments(args)
-
-        openFragment(updateFragment)
+        ErrorHandler.showInsertUpdateDialog(context!!, car, "Atualizar", action = {
+            carViewModel.updateCar(car!!)
+        })
     }
 
     private fun deleteItemList(adapterPosition: Int){
         val car = cars?.get(adapterPosition)
 
-        ErrorHandler.showDeleteDialog(activity as Context, car, deleteAction = {
+        ErrorHandler.showDeleteDialog(activity as Context, car,  deleteAction = {
             carViewModel.deleteCar(car)
         })
     }

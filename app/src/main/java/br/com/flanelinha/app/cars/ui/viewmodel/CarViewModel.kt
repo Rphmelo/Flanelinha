@@ -29,7 +29,7 @@ class CarViewModel(val context: Context): ViewModel() {
                 })
     }
 
-    fun insertCar(car: Car, clearForm: () -> Unit){
+    fun insertCar(car: Car){
         executor.execute {
             dbUtil.insertCar(car)
                     .observeOn(AndroidSchedulers.mainThread())
@@ -38,7 +38,6 @@ class CarViewModel(val context: Context): ViewModel() {
                     .subscribe({
                         if(it){
                             ErrorHandler.showErrorMessage(context, "Veículo cadastrado com sucesso!!")
-                            clearForm()
                             loadCars()
                         } else {
                             ErrorHandler.showErrorMessage(context, "Não foi possível cadastrar este veículo!")
@@ -47,7 +46,7 @@ class CarViewModel(val context: Context): ViewModel() {
         }
     }
 
-    fun updateCar(car: Car, clearForm: () -> Unit){
+    fun updateCar(car: Car){
         executor.execute {
             dbUtil.updateCar(car)
                     .observeOn(AndroidSchedulers.mainThread())
@@ -56,7 +55,6 @@ class CarViewModel(val context: Context): ViewModel() {
                     .subscribe({
                         if(it){
                             ErrorHandler.showErrorMessage(context, "Veículo atualizado com sucesso!!")
-                            clearForm()
                             loadCars()
                         } else {
                             ErrorHandler.showErrorMessage(context, "Não foi possível atualizar este veículo!")

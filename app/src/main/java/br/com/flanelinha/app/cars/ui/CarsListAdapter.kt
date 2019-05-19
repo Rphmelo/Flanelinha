@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.cars_row.view.*
 class CarsListAdapter(
         private val context: Context,
         private val cars: List<Car>?,
-        private val onItemListClick: (adapterPosition: Int) -> Unit,
-        private val onItemListLongClick: (adapterPosition: Int) -> Unit
+        private val onDeleteListener: (adapterPosition: Int) -> Unit,
+        private val onUpdateListener: (adapterPosition: Int) -> Unit
 ) :
         RecyclerView.Adapter<CarsListAdapter.CarsViewHolder>() {
 
@@ -41,13 +41,12 @@ class CarsListAdapter(
             tvModel.text = car?.model
             tvPlate.text = car?.plate
 
-            itemView.setOnClickListener({
-                onItemListClick(adapterPosition)
+            iv_delete.setOnClickListener({
+                onDeleteListener(adapterPosition)
             })
 
-            itemView.setOnLongClickListener({
-                onItemListLongClick(adapterPosition)
-                false
+            iv_edit.setOnClickListener({
+                onUpdateListener(adapterPosition)
             })
         }
 
