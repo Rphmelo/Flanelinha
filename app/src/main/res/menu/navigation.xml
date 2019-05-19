@@ -7,11 +7,6 @@
         android:title="@string/title_map" />
 
     <item
-        android:id="@+id/navigation_register"
-        android:icon="@drawable/ic_register_96"
-        android:title="@string/title_register" />
-
-    <item
         android:id="@+id/navigation_car_list"
         android:icon="@drawable/ic_cars_96"
         android:title="@string/title_list" />

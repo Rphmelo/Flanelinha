@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_contact -> {
-                replaceFragment(fragments[4])
+                replaceFragment(fragments[3])
                 return@OnNavigationItemSelectedListener true
             }
         }

@@ -53,10 +53,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.ui.activities.LoginActivity" />
-        <activity android:name=".registration.ui.activities.SignUpActivity" />
+        <activity
+            android:name=".login.ui.activities.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".registration.ui.activities.SignUpActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".common.ui.activities.MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_main" />
     </application>
 
