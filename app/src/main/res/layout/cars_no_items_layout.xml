@@ -23,7 +23,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginLeft="56dp"
             android:layout_marginRight="56dp"
-            android:text="Você ainda não possui veículos"
+            android:text="@string/text_field_no_cars"
             />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginTop="8dp"
-            android:text="Os veículos cadastrados para você serão listados aqui automaticamente."
+            android:text="@string/text_field_listed_cars"
             />
     </LinearLayout>
 

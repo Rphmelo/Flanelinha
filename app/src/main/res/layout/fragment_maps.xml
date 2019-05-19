@@ -20,7 +20,7 @@
             android:id="@+id/share_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tooltipText="Compartilhar endereço"
+            android:tooltipText="@string/text_field_share_location"
             android:src="@drawable/ic_share_96"
             app:backgroundTint="@null"
             android:layout_margin="16dp" />

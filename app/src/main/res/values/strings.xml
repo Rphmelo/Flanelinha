@@ -4,39 +4,44 @@
     <!-- LABELS -->
 
     <string name="label_button_login">Login</string>
-    <string name="label_button_register">Registrar</string>
-    <string name="label_MakeCall">Ligar</string>
+    <string name="label_button_register">Register</string>
+    <string name="label_MakeCall">Call</string>
     <string name="label_logout">Logout</string>
-    <string name="label_balance_amount_title">Saldo</string>
-    <string name="label_account">Conta</string>
-    <string name="label_payment">Pagamento</string>
+    <string name="label_balance_amount_title">Balance</string>
+    <string name="label_account">Account</string>
+    <string name="label_payment">Payment</string>
     <string name="label_logo">Logo</string>
 
     <!-- HINTS -->
 
-    <string name="text_field_password_hint">Senha</string>
-    <string name="text_field_user_hint">E-mail</string>
-    <string name="text_field_name_hint">Nome</string>
-    <string name="text_field_model_hint">Modelo:</string>
-    <string name="text_field_plate_hint">Placa:</string>
-    <string name="text_field_phone_number_hint">Digite o número do telefone</string>
+    <string name="text_field_password_hint">Password</string>
+    <string name="text_field_user_hint">Email</string>
+    <string name="text_field_name_hint">Name</string>
+    <string name="text_field_model_hint">Car Model:</string>
+    <string name="text_field_plate_hint">License Plate:</string>
+    <string name="text_field_phone_number_hint">Enter your phone number</string>
     <string name="text_field_corporation">Flanelinha Co.</string>
-    <string name="text_field_version">Versão 1.0.0</string>
+    <string name="text_field_version">Version 1.0.0</string>
+    <string name="text_field_make_registration">Not registered yet? SingUp here!</string>
+    <string name="text_field_no_cars">No cars registered</string>
+    <string name="text_field_listed_cars">Cars registered for you will be listed here</string>
+    <string name="text_field_share_location">Share Location</string>
+
 
     <!-- OTHERS -->
 
-    <string name="currency_list_title">Recentes</string>
-    <string name="empty_input_message">Todos os campos devem ser preenchidos</string>
-    <string name="invalid_user_message">Usuário inválido! Digite um Email válido!</string>
-    <string name="invalid_password_message">Senha inválida</string>
-    <string name="login_error_message">Não foi possível realizar o login, tente mais tarde!</string>
+    <string name="currency_list_title">Recent</string>
+    <string name="empty_input_message">All fields must be filled</string>
+    <string name="invalid_user_message">Invalid user! Enter a valid email address</string>
+    <string name="invalid_password_message">Invalid Password</string>
+    <string name="login_error_message">Unable to log in. Try again later!</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_about">Sobre o Aplicativo</string>
-    <string name="title_register">Cadastro</string>
-    <string name="title_update">Atualizar</string>
-    <string name="title_list">Lista</string>
-    <string name="title_map">Mapa</string>
-    <string name="title_contact">Contato</string>
+    <string name="title_about">About this app</string>
+    <string name="title_register">Registration</string>
+    <string name="title_update">Update</string>
+    <string name="title_list">List</string>
+    <string name="title_map">Map</string>
+    <string name="title_contact">Contact</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
