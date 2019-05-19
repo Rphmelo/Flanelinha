@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.content.Context
 import br.com.flanelinha.app.cars.model.Car
-import br.com.flanelinha.app.common.util.ErrorHandler
+import br.com.flanelinha.app.common.util.DialogUtil
 import br.com.flanelinha.app.data.local.util.DbUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -37,10 +37,10 @@ class CarViewModel(val context: Context): ViewModel() {
                     .doOnSubscribe { setLoading(true) }
                     .subscribe({
                         if(it){
-                            ErrorHandler.showErrorMessage(context, "Veículo cadastrado com sucesso!!")
+                            DialogUtil.showMessageDialog(context, "Veículo cadastrado com sucesso!!")
                             loadCars()
                         } else {
-                            ErrorHandler.showErrorMessage(context, "Não foi possível cadastrar este veículo!")
+                            DialogUtil.showMessageDialog(context, "Não foi possível cadastrar este veículo!")
                         }
                     })
         }
@@ -54,10 +54,10 @@ class CarViewModel(val context: Context): ViewModel() {
                     .doOnSubscribe { setLoading(true) }
                     .subscribe({
                         if(it){
-                            ErrorHandler.showErrorMessage(context, "Veículo atualizado com sucesso!!")
+                            DialogUtil.showMessageDialog(context, "Veículo atualizado com sucesso!!")
                             loadCars()
                         } else {
-                            ErrorHandler.showErrorMessage(context, "Não foi possível atualizar este veículo!")
+                            DialogUtil.showMessageDialog(context, "Não foi possível atualizar este veículo!")
                         }
                     })
         }
@@ -72,10 +72,10 @@ class CarViewModel(val context: Context): ViewModel() {
                         .doOnSubscribe { setLoading(true) }
                         .subscribe({
                             if(it){
-                                ErrorHandler.showErrorMessage(context, "Veículo deletado com sucesso!!")
+                                DialogUtil.showMessageDialog(context, "Veículo deletado com sucesso!!")
                                 loadCars()
                             } else {
-                                ErrorHandler.showErrorMessage(context, "Não foi possível deletar este veículo!")
+                                DialogUtil.showMessageDialog(context, "Não foi possível deletar este veículo!")
                             }
                         })
             }

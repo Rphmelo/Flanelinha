@@ -12,7 +12,7 @@ import br.com.flanelinha.app.R
 import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.CarsListAdapter
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
-import br.com.flanelinha.app.common.util.ErrorHandler
+import br.com.flanelinha.app.common.util.DialogUtil
 import kotlinx.android.synthetic.main.fragment_car_list.*
 
 class CarListFragment : Fragment() {
@@ -30,7 +30,7 @@ class CarListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         carViewModel = CarViewModel(activity!!)
         insert_car_button.setOnClickListener({
-            ErrorHandler.showInsertUpdateDialog(context!!,null,"Cadastrar", action = {
+            DialogUtil.showInsertUpdateDialog(context!!,null,"Cadastrar", action = {
                 car -> carViewModel.insertCar(car)
             })
         })
@@ -80,7 +80,7 @@ class CarListFragment : Fragment() {
     private fun updateItemList(adapterPosition: Int){
         val car = cars?.get(adapterPosition)
 
-        ErrorHandler.showInsertUpdateDialog(context!!, car, "Atualizar", action = {
+        DialogUtil.showInsertUpdateDialog(context!!, car, "Atualizar", action = {
             carViewModel.updateCar(car!!)
         })
     }
@@ -88,7 +88,7 @@ class CarListFragment : Fragment() {
     private fun deleteItemList(adapterPosition: Int){
         val car = cars?.get(adapterPosition)
 
-        ErrorHandler.showDeleteDialog(activity as Context, car,  deleteAction = {
+        DialogUtil.showDeleteDialog(activity as Context, car,  deleteAction = {
             carViewModel.deleteCar(car)
         })
     }
