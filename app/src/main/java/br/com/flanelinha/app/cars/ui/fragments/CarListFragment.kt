@@ -1,8 +1,7 @@
 package br.com.flanelinha.app.cars.ui.fragments
 
-import android.app.AlertDialog
 import android.arch.lifecycle.Observer
-import android.content.DialogInterface
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -13,12 +12,14 @@ import br.com.flanelinha.app.R
 import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.cars.ui.CarsListAdapter
 import br.com.flanelinha.app.cars.ui.viewmodel.CarViewModel
+import br.com.flanelinha.app.common.util.ErrorHandler
 import kotlinx.android.synthetic.main.fragment_car_list.*
 
 class CarListFragment : Fragment() {
 
     private lateinit var carViewModel: CarViewModel
-    private lateinit var cars: List<Car>
+    private var cars: List<Car>? = null
+    private var carListAdapter: CarsListAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,20 +28,21 @@ class CarListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        carViewModel = CarViewModel(activity!!)
         loadCars()
         setupRecyclerView()
     }
 
     private fun loadCars(){
-        carViewModel = CarViewModel(activity!!)
         carViewModel.loadCars()
     }
 
     private fun setupRecyclerView(){
         rvCars.layoutManager = LinearLayoutManager(context!!)
+
         carViewModel.cars.observe(this, Observer<List<Car>> {
-            cars = it!!
-            rvCars.adapter = CarsListAdapter(
+            cars = it
+            carListAdapter = CarsListAdapter(
                     activity!!,
                     cars,
                     onItemListClick = {
@@ -50,6 +52,8 @@ class CarListFragment : Fragment() {
                         adapterPosition ->  deleteItemList(adapterPosition)
                     }
             )
+            rvCars.adapter = carListAdapter
+            rvCars.adapter?.notifyDataSetChanged()
         })
     }
 
@@ -61,14 +65,17 @@ class CarListFragment : Fragment() {
     }
 
     private fun updateItemList(adapterPosition: Int){
-        val car = cars[adapterPosition]
+        val car = cars?.get(adapterPosition)
 
         val args = Bundle()
         val updateFragment = RegisterCarFragment();
 
-        args.putLong("id", car.id)
-        args.putString("model", car.model)
-        args.putString("plate", car.plate)
+        car?.let {
+            args.putLong("id", it.id)
+            args.putString("model", it.model)
+            args.putString("plate", it.plate)
+        }
+
         args.putBoolean("isUpdate", true)
 
         updateFragment.setArguments(args)
@@ -77,29 +84,11 @@ class CarListFragment : Fragment() {
     }
 
     private fun deleteItemList(adapterPosition: Int){
-        val car = cars[adapterPosition]
+        val car = cars?.get(adapterPosition)
 
-        showDeleteDialog(car)
-    }
-
-    private fun showDeleteDialog(car: Car){
-        val alertDialog = AlertDialog.Builder(activity).create()
-        alertDialog.setTitle("Tem Certeza que deseja deletar este item?")
-        alertDialog.setCancelable(true)
-
-        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancelar", object : DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface, which: Int) {
-                alertDialog.dismiss()
-            }
+        ErrorHandler.showDeleteDialog(activity as Context, car, deleteAction = {
+            carViewModel.deleteCar(car)
         })
-
-        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Deletar", object : DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface, which: Int) {
-                carViewModel.deleteCar(car)
-                alertDialog.dismiss()
-            }
-        })
-        alertDialog.show()
     }
 
     override fun onDestroy() {

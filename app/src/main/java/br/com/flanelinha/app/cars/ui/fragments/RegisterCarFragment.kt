@@ -29,10 +29,16 @@ class RegisterCarFragment : Fragment() {
 
         btnRegisterCars.setOnClickListener({
             if(isUpdate){
-                carViewModel.updateCar(carToUpdate)
-                carViewModel.loadCars()
+                carToUpdate.model = tietModel.text.toString()
+                carToUpdate.plate = tietPlate.text.toString()
+
+                carViewModel.updateCar(carToUpdate, clearForm = {
+                    clearFormData()
+                })
             } else {
-                carViewModel.saveCar(Car(0, tietPlate.text.toString(), tietModel.text.toString()))
+                carViewModel.insertCar(Car(0, tietPlate.text.toString(), tietModel.text.toString()), clearForm = {
+                    clearFormData()
+                })
             }
         })
     }
@@ -55,6 +61,11 @@ class RegisterCarFragment : Fragment() {
             tietPlate.setText(carToUpdate.plate)
             btnRegisterCars.setText(R.string.title_update)
         }
+    }
+
+    private fun clearFormData(){
+        tietPlate.setText("")
+        tietModel.setText("")
     }
 
     override fun onDestroy() {

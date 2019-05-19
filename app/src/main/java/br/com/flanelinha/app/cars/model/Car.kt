@@ -7,6 +7,6 @@ import android.arch.persistence.room.PrimaryKey
 data class Car(
         @PrimaryKey(autoGenerate = true)
         val id: Long = 0,
-        val plate: String,
-        val model: String
+        var plate: String,
+        var model: String
 )

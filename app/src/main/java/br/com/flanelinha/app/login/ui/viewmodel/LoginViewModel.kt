@@ -50,6 +50,6 @@ class LoginViewModel(val context: Context) : ViewModel() {
     }
 
     private fun showErrorMessage(message: String) {
-        ErrorHandler().showErrorMessage(context, message)
+        ErrorHandler.showErrorMessage(context, message)
     }
 }

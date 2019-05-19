@@ -1,24 +1,22 @@
 package br.com.flanelinha.app.data.local.dao
 
-import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import br.com.flanelinha.app.cars.model.Car
-import io.reactivex.Single
 
 @Dao
 interface CarDAO {
 
     @Insert(onConflict = REPLACE)
-    fun save(car: Car): Single<Long>
+    fun insert(car: Car)
 
     @Query("SELECT * FROM car")
-    fun loadCars(): LiveData<List<Car>>
+    fun loadCars(): List<Car>
 
     @Update
-    fun update(car: Car): Single<Long>
+    fun update(car: Car)
 
     @Delete
-    fun delete(car: Car): Single<Long>
+    fun delete(car: Car)
 
 }

@@ -11,24 +11,27 @@ import kotlinx.android.synthetic.main.cars_row.view.*
 
 class CarsListAdapter(
         private val context: Context,
-        private val cars: List<Car>,
+        private val cars: List<Car>?,
         private val onItemListClick: (adapterPosition: Int) -> Unit,
         private val onItemListLongClick: (adapterPosition: Int) -> Unit
 ) :
         RecyclerView.Adapter<CarsListAdapter.CarsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarsViewHolder {
-        val view = LayoutInflater.from(context)
-                .inflate(R.layout.cars_row, parent, false)
-        return CarsViewHolder(view)
+        return CarsViewHolder(LayoutInflater.from(context)
+                .inflate(R.layout.cars_row, parent, false))
     }
 
     override fun getItemCount(): Int {
-        return cars.size
+        var count = 0
+        cars?.let{
+            count = it.size
+        }
+        return count
     }
 
     override fun onBindViewHolder(holder: CarsViewHolder, position: Int) {
-        holder.bindView(cars[position])
+        holder.bindView(cars?.get(position))
     }
 
     inner class CarsViewHolder(itemView: View) :
@@ -42,7 +45,7 @@ class CarsListAdapter(
                 onItemListClick(adapterPosition)
             })
 
-            itemView.setOnLongClickListener({ view ->
+            itemView.setOnLongClickListener({
                 onItemListLongClick(adapterPosition)
                 false
             })
