@@ -105,7 +105,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         if(!mapAlreadyLoaded){
             placeMarkerOnMap(paulista)
         }
-
+        share_address_layout.visibility = View.VISIBLE
         share_address.setOnClickListener {
             shareAddressText()
         }
