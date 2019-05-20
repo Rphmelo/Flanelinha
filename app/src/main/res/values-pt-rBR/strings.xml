@@ -26,11 +26,6 @@
 
     <!-- OTHERS -->
 
-    <string name="currency_list_title">Recentes</string>
-    <string name="empty_input_message">Todos os campos devem ser preenchidos</string>
-    <string name="invalid_user_message">Usuário inválido! Entre um endereço de e-mail válido</string>
-    <string name="invalid_password_message">Senha inválida</string>
-    <string name="login_error_message">Não foi possível realizar o login, tente mais tarde!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_about">Sobre o Aplicativo</string>
     <string name="title_register">Cadastro</string>

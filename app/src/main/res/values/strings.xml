@@ -7,9 +7,6 @@
     <string name="label_button_register">Register</string>
     <string name="label_MakeCall">Call</string>
     <string name="label_logout">Logout</string>
-    <string name="label_balance_amount_title">Balance</string>
-    <string name="label_account">Account</string>
-    <string name="label_payment">Payment</string>
     <string name="label_logo">Logo</string>
 
     <!-- HINTS -->
@@ -30,11 +27,6 @@
 
     <!-- OTHERS -->
 
-    <string name="currency_list_title">Recent</string>
-    <string name="empty_input_message">All fields must be filled</string>
-    <string name="invalid_user_message">Invalid user! Enter a valid email address</string>
-    <string name="invalid_password_message">Invalid Password</string>
-    <string name="login_error_message">Unable to log in. Try again later!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_about">About this app</string>
     <string name="title_register">Registration</string>
