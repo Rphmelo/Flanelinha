@@ -44,7 +44,7 @@ class ContactFragment : Fragment() {
         if (ActivityCompat.checkSelfPermission(context!!,
                 Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             if(tietPhoneNumber.text.toString().isEmpty()){
-                DialogUtil.showMessageDialog(context!!, "É necessário preencher o telefone")
+                DialogUtil.showMessageDialog(context!!, resources.getString(R.string.message_no_phone))
                 return
             }
             val uri: String = "tel:" + tietPhoneNumber.text.toString().trim()

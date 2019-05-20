@@ -7,9 +7,6 @@
     <string name="label_button_register">Registrar</string>
     <string name="label_MakeCall">Faça uma ligação</string>
     <string name="label_logout">Sair</string>
-    <string name="label_balance_amount_title">Saldo</string>
-    <string name="label_account">Conta</string>
-    <string name="label_payment">Pagamento</string>
     <string name="label_logo">Logo</string>
 
     <!-- HINTS -->
@@ -19,7 +16,7 @@
     <string name="text_field_name_hint">Nome</string>
     <string name="text_field_model_hint">Modelo de carro:</string>
     <string name="text_field_plate_hint">Placa:</string>
-    <string name="text_field_phone_number_hint">Entre seu número de telefone</string>
+    <string name="text_field_phone_number_hint">Digite seu número de telefone</string>
     <string name="text_field_corporation">Flanelinha Co.</string>
     <string name="text_field_version">Versão 1.0.0</string>
     <string name="text_field_make_registration">Não tem uma conta? Cadastre-se</string>
@@ -42,6 +39,11 @@
     <string name="title_map">Mapa</string>
     <string name="title_contact">Contato</string>
     <string name="title_activity_maps">Mapa</string>
+    <string name="message_no_phone">É necessário preencher o telefone</string>
+    <string name="dev_name1">Raphael de Melo Silva</string>
+    <string name="dev_name2">Adriano Mendes Marinheiro</string>
+    <string name="dev_name3">Natalie Berland</string>
+    <string name="developed_for_label">Desenvolvido por:</string>
 
     <string name="hello_blank_fragment">Olá espaço em branco</string>
 

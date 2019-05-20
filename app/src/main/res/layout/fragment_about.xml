@@ -16,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Desenvolvido por:"
+            android:text="@string/developed_for_label"
             android:textSize="20sp" />
         <TextView
             android:id="@+id/tv_developer_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Raphael de Melo Silva"
+            android:text="@string/dev_name1"
             android:textSize="16sp" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Adriano Mendes Marinheiro"
+            android:text="@string/dev_name2"
             android:textSize="16sp" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Natalie Berland"
+            android:text="@string/dev_name3"
             android:textSize="16sp" />
         <ImageView
             android:id="@+id/imageView"
