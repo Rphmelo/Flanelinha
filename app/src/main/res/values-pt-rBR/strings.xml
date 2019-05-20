@@ -39,7 +39,17 @@
     <string name="dev_name2">Adriano Mendes Marinheiro</string>
     <string name="dev_name3">Natalie Berland</string>
     <string name="developed_for_label">Desenvolvido por:</string>
+    <string name="label_attention">Atenção</string>
+    <string name="delete_dialog_title">Tem certeza que quer deletar este estacionamento?</string>
 
-    <string name="hello_blank_fragment">Olá espaço em branco</string>
+    <string name="update_label">Atualizar</string>
+    <string name="register_label">Cadastrar</string>
+    <string name="deleter_label">Deletar</string>
+    <string name="cancel_label">Cancelar</string>
+    <string name="label_loading">Carregando...</string>
+
+    <string name="message_success_register">Veículo cadastrado com sucesso!</string>
+    <string name="message_success_update">Veículo atualizado com sucesso!</string>
+    <string name="message_success_delete">Veículo deletado com sucesso!</string>
 
 </resources>

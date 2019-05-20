@@ -16,7 +16,7 @@ class DialogUtil {
 
         fun getLoading(context: Context): ProgressDialog{
             dialog = ProgressDialog(context)
-            dialog.setMessage("Carregando...")
+            dialog.setMessage(context.resources.getString(R.string.label_loading))
             dialog.setIndeterminate(false)
             dialog.setCanceledOnTouchOutside(true)
             dialog.setCancelable(true)
@@ -26,7 +26,7 @@ class DialogUtil {
 
         fun showMessageDialog(context: Context, message: String) {
             val alertDialog = AlertDialog.Builder(context).create()
-            alertDialog.setTitle("Atenção")
+            alertDialog.setTitle(context.resources.getString(R.string.label_attention))
             alertDialog.setMessage(message)
             alertDialog.setCancelable(true)
 
@@ -40,17 +40,17 @@ class DialogUtil {
 
         fun showDeleteDialog(context: Context, car: Car?, deleteAction: ()  -> Unit){
             val alertDialog = AlertDialog.Builder(context).create()
-            alertDialog.setTitle("Tem Certeza que deseja deletar este veículo?")
-            alertDialog.setMessage("Modelo: ${car?.model} Placa:${car?.plate}")
+            alertDialog.setTitle(context.resources.getString(R.string.delete_dialog_title))
+            alertDialog.setMessage("${car?.model} ${car?.plate}")
             alertDialog.setCancelable(true)
 
-            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancelar", object : DialogInterface.OnClickListener {
+            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, context.resources.getString(R.string.cancel_label), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     alertDialog.dismiss()
                 }
             })
 
-            alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Deletar", object : DialogInterface.OnClickListener {
+            alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, context.resources.getString(R.string.deleter_label), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     deleteAction()
                     alertDialog.dismiss()
@@ -73,7 +73,7 @@ class DialogUtil {
 
             alertDialog.setCancelable(true)
             alertDialog.setView(viewInflated)
-            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Cancelar", object : DialogInterface.OnClickListener {
+            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, context.resources.getString(R.string.cancel_label), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     alertDialog.dismiss()
                 }

@@ -30,7 +30,7 @@ class CarListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         carViewModel = CarViewModel(activity!!)
         insert_car_button.setOnClickListener({
-            DialogUtil.showInsertUpdateDialog(context!!,null,"Cadastrar", action = {
+            DialogUtil.showInsertUpdateDialog(context!!,null,context!!.resources.getString(R.string.register_label), action = {
                 car -> carViewModel.insertCar(car)
             })
         })
@@ -80,7 +80,7 @@ class CarListFragment : Fragment() {
     private fun updateItemList(adapterPosition: Int){
         val car = cars?.get(adapterPosition)
 
-        DialogUtil.showInsertUpdateDialog(context!!, car, "Atualizar", action = {
+        DialogUtil.showInsertUpdateDialog(context!!, car, context!!.resources.getString(R.string.update_label), action = {
             carViewModel.updateCar(car!!)
         })
     }

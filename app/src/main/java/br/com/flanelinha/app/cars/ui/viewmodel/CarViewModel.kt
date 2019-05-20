@@ -3,6 +3,7 @@ package br.com.flanelinha.app.cars.ui.viewmodel
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.content.Context
+import br.com.flanelinha.app.R
 import br.com.flanelinha.app.cars.model.Car
 import br.com.flanelinha.app.common.util.DialogUtil
 import br.com.flanelinha.app.data.local.util.DbUtil
@@ -37,10 +38,8 @@ class CarViewModel(val context: Context): ViewModel() {
                     .doOnSubscribe { setLoading(true) }
                     .subscribe({
                         if(it){
-                            DialogUtil.showMessageDialog(context, "Veículo cadastrado com sucesso!!")
+                            DialogUtil.showMessageDialog(context, context.resources.getString(R.string.message_success_register))
                             loadCars()
-                        } else {
-                            DialogUtil.showMessageDialog(context, "Não foi possível cadastrar este veículo!")
                         }
                     })
         }
@@ -54,10 +53,8 @@ class CarViewModel(val context: Context): ViewModel() {
                     .doOnSubscribe { setLoading(true) }
                     .subscribe({
                         if(it){
-                            DialogUtil.showMessageDialog(context, "Veículo atualizado com sucesso!!")
+                            DialogUtil.showMessageDialog(context, context.resources.getString(R.string.message_success_update))
                             loadCars()
-                        } else {
-                            DialogUtil.showMessageDialog(context, "Não foi possível atualizar este veículo!")
                         }
                     })
         }
@@ -72,10 +69,8 @@ class CarViewModel(val context: Context): ViewModel() {
                         .doOnSubscribe { setLoading(true) }
                         .subscribe({
                             if(it){
-                                DialogUtil.showMessageDialog(context, "Veículo deletado com sucesso!!")
+                                DialogUtil.showMessageDialog(context, context.resources.getString(R.string.message_success_delete))
                                 loadCars()
-                            } else {
-                                DialogUtil.showMessageDialog(context, "Não foi possível deletar este veículo!")
                             }
                         })
             }
